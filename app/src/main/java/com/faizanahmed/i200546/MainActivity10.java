@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 public class MainActivity10 extends AppCompatActivity {
+    //part 7 function below
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
