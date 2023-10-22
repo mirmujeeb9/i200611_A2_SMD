@@ -10,6 +10,8 @@ import android.widget.ImageView;
 
 public class MainActivity14 extends AppCompatActivity {
 
+    //part 11 function below
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
