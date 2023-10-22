@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity2">
+
+  <TextView
+      android:id="@+id/LoginText"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="50dp"
+      android:padding="20dp"
+      android:text="Forgot your password?"
+      android:textStyle="bold"
+      android:textColor="@color/black"
+      android:textSize="24dp" />
+
+  <TextView
+      android:id="@+id/EmailText"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/LoginText"
+      android:paddingLeft="20dp"
+      android:text="Email"
+      android:textStyle="bold"
+      android:textColor="@color/black"
+      android:textSize="14dp" />
+
+  <EditText
+      android:id="@+id/EmailInput"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/EmailText"
+      android:layout_marginHorizontal="20dp"
+      android:layout_marginVertical="10dp"
+      android:background="@drawable/gray_placeholder_input"
+      android:hint="Enter email"
+      android:padding="10dp"
+      android:textSize="16dp" />
+
+  <androidx.appcompat.widget.AppCompatButton
+      android:id="@+id/ResetBtn"
+      android:textAllCaps="false"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/EmailInput"
+      android:gravity="center"
+      android:layout_marginHorizontal="20dp"
+      android:layout_marginVertical="15dp"
+      android:background="@drawable/orange_placeholder_input"
+      android:text="Reset Password"
+      android:textColor="@color/white"
+      android:padding="10dp"
+      android:textSize="20dp" />
+
+  <TextView
+      android:id="@+id/GoBackText"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_alignParentEnd="true"
+      android:layout_alignParentBottom="true"
+      android:paddingVertical="30dp"
+      android:gravity="center"
+      android:text="Go back"
+      android:textStyle="bold"
+      android:clickable="true"
+      android:textColor="@color/black"
+      android:textSize="20dp" />
+
+  </RelativeLayout>

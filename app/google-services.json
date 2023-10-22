@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "591563778969",
+    "project_id": "i200546",
+    "storage_bucket": "i200546.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:591563778969:android:7682ecf67aec7cec6f0108",
+        "android_client_info": {
+          "package_name": "com.faizanahmed.i200546"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3ET0JhkIta-VLQ37us0xDWTfNBhkiQbw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

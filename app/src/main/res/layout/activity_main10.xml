@@ -1,0 +1,1254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity10">
+
+    <RelativeLayout
+        android:id="@+id/ProfileText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/Chat_CardViewItemNameText4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Profile"
+            android:textColor="@color/black"
+            android:textSize="24dp"
+            android:textStyle="bold"/>
+
+        <ImageView
+            android:id="@+id/EditProfile"
+            android:layout_width="22dp"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_gravity="right"
+            android:layout_marginRight="8dp"
+            android:src="@drawable/editing" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/ProfileText">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--    Image Layout-->
+        <RelativeLayout
+            android:id="@+id/DP_RelativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:id="@+id/greyBackground"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/userPic"
+                android:layout_alignParentTop="true"
+                android:orientation="vertical"
+                android:background="#D3D1D1">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="24dp"
+                    android:textStyle="bold"
+                    android:paddingTop="60dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_margin="20dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16dp"
+                        android:layout_marginStart="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16dp"
+                        android:layout_marginStart="20dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16dp"
+                        android:layout_marginStart="20dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/whiteBackground"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/greyBackground"
+                android:orientation="vertical"
+                android:background="#FBFBFB">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:paddingTop="60dp"
+                    android:text="Daud"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_margin="20dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/location_pin" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:text="Islamabad"
+                        android:textSize="14dp"
+                        android:textStyle="bold"
+                        android:layout_gravity="center"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="18 items posted"
+                        android:textSize="14dp"
+                        android:textStyle="bold"
+                        android:layout_gravity="center"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="24 items rented"
+                        android:textSize="14dp"
+                        android:textStyle="bold"
+                        android:layout_gravity="center"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/userPic"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="20dp"
+                android:src="@drawable/user_pic"
+                android:layout_centerVertical="true"/>
+        </RelativeLayout>
+
+
+        <!--    Rented Items-->
+        <TextView
+            android:id="@+id/RentedText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/DP_RelativeLayout"
+            android:layout_marginHorizontal="20dp"
+            android:text="Items You've Rented"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
+        <HorizontalScrollView
+            android:id="@+id/RentedItemsHorizontalView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            android:layout_below="@id/RentedText">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@id/RentedText">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/FeaturesItems_CardView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardElevation="5dp"
+                    app:cardCornerRadius="10dp"
+                    android:layout_marginVertical="20dp"
+                    android:layout_marginHorizontal="20dp"
+                    >
+
+                    <LinearLayout
+                        android:id="@+id/FeaturesItems_CardViewLinearLayout1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:id="@+id/FeaturesItems_CardViewImage1"
+                            android:layout_width="225dp"
+                            android:layout_height="150dp"
+                            android:padding="20dp"
+                            android:src="@drawable/pancakes"
+                            android:layout_weight="6"
+                            android:background="#8BE1EC"/>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_margin="10dp">
+
+                            <RelativeLayout
+                                android:id="@+id/FeaturesItems_CardViewRelativeLayout1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1">
+                                <TextView
+                                    android:id="@+id/FeaturesItems_CardViewItemNameText1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Item Name"
+                                    android:textSize="16dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"/>
+                                <LinearLayout
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:layout_below="@id/FeaturesItems_CardViewItemNameText1"
+                                    android:orientation="horizontal">
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/location_pin" />
+                                    <TextView
+                                        android:id="@+id/FeaturesItems_CardViewCityText1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Islamabad"
+                                        android:textSize="16dp"/>
+                                </LinearLayout>
+                            </RelativeLayout>
+                            <RelativeLayout
+                                android:id="@+id/FeaturesItems_CardViewRelativeLayout2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:gravity="right">
+                                <TextView
+                                    android:id="@+id/FeaturesItems_CardViewHourText1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="$60/hr"
+                                    android:textSize="16dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:textStyle="bold"
+                                    android:textColor="#EE8205"/>
+                                <TextView
+                                    android:id="@+id/FeaturesItems_CardViewDateText1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/FeaturesItems_CardViewHourText1"
+                                    android:text="7th March"
+                                    android:textSize="16dp"/>
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/FeaturesItems_CardView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardElevation="5dp"
+                    app:cardCornerRadius="10dp"
+                    android:layout_marginVertical="20dp"
+                    android:layout_marginHorizontal="20dp"
+                    >
+
+                    <LinearLayout
+                        android:id="@+id/FeaturesItems_CardViewLinearLayout2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:id="@+id/FeaturesItems_CardViewImage2"
+                            android:layout_width="225dp"
+                            android:layout_height="150dp"
+                            android:padding="20dp"
+                            android:src="@drawable/fast_food"
+                            android:layout_weight="6"
+                            android:background="#FF8BE1EC"/>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_margin="10dp">
+
+                            <RelativeLayout
+                                android:id="@+id/FeaturesItems_CardViewRelativeLayout3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1">
+                                <TextView
+                                    android:id="@+id/FeaturesItems_CardViewItemNameText2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Item Name"
+                                    android:textSize="16dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"/>
+                                <LinearLayout
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:layout_below="@id/FeaturesItems_CardViewItemNameText2"
+                                    android:orientation="horizontal">
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/location_pin" />
+                                    <TextView
+                                        android:id="@+id/FeaturesItems_CardViewCityText2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Islamabad"
+                                        android:textSize="16dp"/>
+                                </LinearLayout>
+                            </RelativeLayout>
+                            <RelativeLayout
+                                android:id="@+id/FeaturesItems_CardViewRelativeLayout4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:gravity="right">
+                                <TextView
+                                    android:id="@+id/FeaturesItems_CardViewHourText2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="$60/hr"
+                                    android:textSize="16dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:textStyle="bold"
+                                    android:textColor="#EE8205"/>
+                                <TextView
+                                    android:id="@+id/FeaturesItems_CardViewDateText2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/FeaturesItems_CardViewHourText2"
+                                    android:text="7th March"
+                                    android:textSize="16dp"/>
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <!--Your Items-->
+        <TextView
+            android:id="@+id/YourItemsText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/RentedItemsHorizontalView"
+            android:layout_marginHorizontal="20dp"
+            android:text="Your Items"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="110dp"
+            android:orientation="vertical"
+            android:layout_below="@id/YourItemsText">
+
+            <!--            1st-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@id/SomeItem">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/CardView1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:cardElevation="5dp"
+                    app:cardCornerRadius="10dp"
+                    android:layout_marginVertical="20dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    >
+
+                    <LinearLayout
+                        android:id="@+id/CardViewLinearLayout1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:id="@+id/CardViewImage1"
+                            android:layout_width="match_parent"
+                            android:layout_height="150dp"
+                            android:padding="20dp"
+                            android:src="@drawable/pancakes"
+                            android:layout_weight="6"
+                            android:background="#8BE1EC" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginVertical="10dp"
+                            android:layout_marginHorizontal="5dp">
+
+                            <RelativeLayout
+                                android:id="@+id/CardViewRelativeLayout1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1">
+                                <TextView
+                                    android:id="@+id/CardViewItemNameText1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Item Name"
+                                    android:textSize="12dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"/>
+                                <LinearLayout
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:layout_below="@id/CardViewItemNameText1"
+                                    android:orientation="horizontal">
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/location_pin" />
+                                    <TextView
+                                        android:id="@+id/CardViewCityText1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Islamabad"
+                                        android:textSize="12dp"/>
+                                </LinearLayout>
+                            </RelativeLayout>
+                            <RelativeLayout
+                                android:id="@+id/CardViewRelativeLayout2"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1.7"
+                                android:gravity="right">
+                                <TextView
+                                    android:id="@+id/CardViewHourText1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="$60/hr"
+                                    android:textSize="12dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:textStyle="bold"
+                                    android:textColor="#EE8205"/>
+                                <TextView
+                                    android:id="@+id/CardViewDateText1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/CardViewHourText1"
+                                    android:text="7th March"
+                                    android:textSize="12dp"/>
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/CardView2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:cardElevation="5dp"
+                    app:cardCornerRadius="10dp"
+                    android:layout_marginVertical="20dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1"
+                    >
+
+                    <LinearLayout
+                        android:id="@+id/CardViewLinearLayout2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:id="@+id/CardViewImage2"
+                            android:layout_width="match_parent"
+                            android:layout_height="150dp"
+                            android:padding="20dp"
+                            android:src="@drawable/pancakes"
+                            android:layout_weight="6"
+                            android:background="#8BE1EC" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginVertical="10dp"
+                            android:layout_marginHorizontal="5dp">
+
+                            <RelativeLayout
+                                android:id="@+id/CardViewRelativeLayout3"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1">
+                                <TextView
+                                    android:id="@+id/CardViewItemNameText2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Item Name"
+                                    android:textSize="12dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"/>
+                                <LinearLayout
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:layout_below="@id/CardViewItemNameText2"
+                                    android:orientation="horizontal">
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/location_pin" />
+                                    <TextView
+                                        android:id="@+id/CardViewCityText2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Islamabad"
+                                        android:textSize="12dp"/>
+                                </LinearLayout>
+                            </RelativeLayout>
+                            <RelativeLayout
+                                android:id="@+id/CardViewRelativeLayout4"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1.7"
+                                android:gravity="right">
+                                <TextView
+                                    android:id="@+id/CardViewHourText2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="$60/hr"
+                                    android:textSize="12dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:textStyle="bold"
+                                    android:textColor="#EE8205"/>
+                                <TextView
+                                    android:id="@+id/CardViewDateText2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/CardViewHourText2"
+                                    android:text="7th March"
+                                    android:textSize="12dp"/>
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+
+            </LinearLayout>
+
+            <!--            2nd-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@id/SomeItem">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/CardView3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:cardElevation="5dp"
+                    app:cardCornerRadius="10dp"
+                    android:layout_marginVertical="20dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    >
+
+                    <LinearLayout
+                        android:id="@+id/CardViewLinearLayout3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:id="@+id/CardViewImage3"
+                            android:layout_width="match_parent"
+                            android:layout_height="150dp"
+                            android:padding="20dp"
+                            android:src="@drawable/pancakes"
+                            android:layout_weight="6"
+                            android:background="#8BE1EC" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginVertical="10dp"
+                            android:layout_marginHorizontal="5dp">
+
+                            <RelativeLayout
+                                android:id="@+id/CardViewRelativeLayout5"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1">
+                                <TextView
+                                    android:id="@+id/CardViewItemNameText3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Item Name"
+                                    android:textSize="12dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"/>
+                                <LinearLayout
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:layout_below="@id/CardViewItemNameText3"
+                                    android:orientation="horizontal">
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/location_pin" />
+                                    <TextView
+                                        android:id="@+id/CardViewCityText3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Islamabad"
+                                        android:textSize="12dp"/>
+                                </LinearLayout>
+                            </RelativeLayout>
+                            <RelativeLayout
+                                android:id="@+id/CardViewRelativeLayout6"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1.7"
+                                android:gravity="right">
+                                <TextView
+                                    android:id="@+id/CardViewHourText3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="$60/hr"
+                                    android:textSize="12dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:textStyle="bold"
+                                    android:textColor="#EE8205"/>
+                                <TextView
+                                    android:id="@+id/CardViewDateText3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/CardViewHourText3"
+                                    android:text="7th March"
+                                    android:textSize="12dp"/>
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/CardView4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:cardElevation="5dp"
+                    app:cardCornerRadius="10dp"
+                    android:layout_marginVertical="20dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1"
+                    >
+
+                    <LinearLayout
+                        android:id="@+id/CardViewLinearLayout4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:id="@+id/CardViewImage4"
+                            android:layout_width="match_parent"
+                            android:layout_height="150dp"
+                            android:padding="20dp"
+                            android:src="@drawable/pancakes"
+                            android:layout_weight="6"
+                            android:background="#8BE1EC" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginVertical="10dp"
+                            android:layout_marginHorizontal="5dp">
+
+                            <RelativeLayout
+                                android:id="@+id/CardViewRelativeLayout7"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1">
+                                <TextView
+                                    android:id="@+id/CardViewItemNameText4"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Item Name"
+                                    android:textSize="12dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"/>
+                                <LinearLayout
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:layout_below="@id/CardViewItemNameText4"
+                                    android:orientation="horizontal">
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/location_pin" />
+                                    <TextView
+                                        android:id="@+id/CardViewCityText4"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Islamabad"
+                                        android:textSize="12dp"/>
+                                </LinearLayout>
+                            </RelativeLayout>
+                            <RelativeLayout
+                                android:id="@+id/CardViewRelativeLayout8"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1.7"
+                                android:gravity="right">
+                                <TextView
+                                    android:id="@+id/CardViewHourText4"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="$60/hr"
+                                    android:textSize="12dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:textStyle="bold"
+                                    android:textColor="#EE8205"/>
+                                <TextView
+                                    android:id="@+id/CardViewDateText4"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/CardViewHourText4"
+                                    android:text="7th March"
+                                    android:textSize="12dp"/>
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+
+            </LinearLayout>
+
+            <!--            3rd-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@id/SomeItem">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/CardView5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:cardElevation="5dp"
+                    app:cardCornerRadius="10dp"
+                    android:layout_marginVertical="20dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    >
+
+                    <LinearLayout
+                        android:id="@+id/CardViewLinearLayout5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:id="@+id/CardViewImage5"
+                            android:layout_width="match_parent"
+                            android:layout_height="150dp"
+                            android:padding="20dp"
+                            android:src="@drawable/pancakes"
+                            android:layout_weight="6"
+                            android:background="#8BE1EC" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginVertical="10dp"
+                            android:layout_marginHorizontal="5dp">
+
+                            <RelativeLayout
+                                android:id="@+id/CardViewRelativeLayout9"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1">
+                                <TextView
+                                    android:id="@+id/CardViewItemNameText5"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Item Name"
+                                    android:textSize="12dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"/>
+                                <LinearLayout
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:layout_below="@id/CardViewItemNameText5"
+                                    android:orientation="horizontal">
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/location_pin" />
+                                    <TextView
+                                        android:id="@+id/CardViewCityText5"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Islamabad"
+                                        android:textSize="12dp"/>
+                                </LinearLayout>
+                            </RelativeLayout>
+                            <RelativeLayout
+                                android:id="@+id/CardViewRelativeLayout10"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1.7"
+                                android:gravity="right">
+                                <TextView
+                                    android:id="@+id/CardViewHourText5"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="$60/hr"
+                                    android:textSize="12dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:textStyle="bold"
+                                    android:textColor="#EE8205"/>
+                                <TextView
+                                    android:id="@+id/CardViewDateText5"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/CardViewHourText5"
+                                    android:text="7th March"
+                                    android:textSize="12dp"/>
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/CardView6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:cardElevation="5dp"
+                    app:cardCornerRadius="10dp"
+                    android:layout_marginVertical="20dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1"
+                    >
+
+                    <LinearLayout
+                        android:id="@+id/CardViewLinearLayout6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:id="@+id/CardViewImage6"
+                            android:layout_width="match_parent"
+                            android:layout_height="150dp"
+                            android:padding="20dp"
+                            android:src="@drawable/pancakes"
+                            android:layout_weight="6"
+                            android:background="#8BE1EC" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginVertical="10dp"
+                            android:layout_marginHorizontal="5dp">
+
+                            <RelativeLayout
+                                android:id="@+id/CardViewRelativeLayout11"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1">
+                                <TextView
+                                    android:id="@+id/CardViewItemNameText6"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Item Name"
+                                    android:textSize="12dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"/>
+                                <LinearLayout
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:layout_below="@id/CardViewItemNameText6"
+                                    android:orientation="horizontal">
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/location_pin" />
+                                    <TextView
+                                        android:id="@+id/CardViewCityText6"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Islamabad"
+                                        android:textSize="12dp"/>
+                                </LinearLayout>
+                            </RelativeLayout>
+                            <RelativeLayout
+                                android:id="@+id/CardViewRelativeLayout12"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1.7"
+                                android:gravity="right">
+                                <TextView
+                                    android:id="@+id/CardViewHourText6"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="$60/hr"
+                                    android:textSize="12dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:textStyle="bold"
+                                    android:textColor="#EE8205"/>
+                                <TextView
+                                    android:id="@+id/CardViewDateText6"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/CardViewHourText6"
+                                    android:text="7th March"
+                                    android:textSize="12dp"/>
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+
+            </LinearLayout>
+            <!--            4th-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@id/SomeItem">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/CardView7"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:cardElevation="5dp"
+                    app:cardCornerRadius="10dp"
+                    android:layout_marginVertical="20dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    >
+
+                    <LinearLayout
+                        android:id="@+id/CardViewLinearLayout7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:id="@+id/CardViewImage7"
+                            android:layout_width="match_parent"
+                            android:layout_height="150dp"
+                            android:padding="20dp"
+                            android:src="@drawable/pancakes"
+                            android:layout_weight="6"
+                            android:background="#8BE1EC" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginVertical="10dp"
+                            android:layout_marginHorizontal="5dp">
+
+                            <RelativeLayout
+                                android:id="@+id/CardViewRelativeLayout13"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1">
+                                <TextView
+                                    android:id="@+id/CardViewItemNameText7"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Item Name"
+                                    android:textSize="12dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"/>
+                                <LinearLayout
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:layout_below="@id/CardViewItemNameText7"
+                                    android:orientation="horizontal">
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/location_pin" />
+                                    <TextView
+                                        android:id="@+id/CardViewCityText7"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Islamabad"
+                                        android:textSize="12dp"/>
+                                </LinearLayout>
+                            </RelativeLayout>
+                            <RelativeLayout
+                                android:id="@+id/CardViewRelativeLayout14"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1.7"
+                                android:gravity="right">
+                                <TextView
+                                    android:id="@+id/CardViewHourText7"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="$60/hr"
+                                    android:textSize="12dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:textStyle="bold"
+                                    android:textColor="#EE8205"/>
+                                <TextView
+                                    android:id="@+id/CardViewDateText7"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/CardViewHourText7"
+                                    android:text="7th March"
+                                    android:textSize="12dp"/>
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/CardView8"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:cardElevation="5dp"
+                    app:cardCornerRadius="10dp"
+                    android:layout_marginVertical="20dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1"
+                    >
+
+                    <LinearLayout
+                        android:id="@+id/CardViewLinearLayout8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:id="@+id/CardViewImage8"
+                            android:layout_width="match_parent"
+                            android:layout_height="150dp"
+                            android:padding="20dp"
+                            android:src="@drawable/pancakes"
+                            android:layout_weight="6"
+                            android:background="#8BE1EC" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginVertical="10dp"
+                            android:layout_marginHorizontal="5dp">
+
+                            <RelativeLayout
+                                android:id="@+id/CardViewRelativeLayout15"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1">
+                                <TextView
+                                    android:id="@+id/CardViewItemNameText8"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Item Name"
+                                    android:textSize="12dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"/>
+                                <LinearLayout
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:layout_below="@id/CardViewItemNameText8"
+                                    android:orientation="horizontal">
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/location_pin" />
+                                    <TextView
+                                        android:id="@+id/CardViewCityText8"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Islamabad"
+                                        android:textSize="12dp"/>
+                                </LinearLayout>
+                            </RelativeLayout>
+                            <RelativeLayout
+                                android:id="@+id/CardViewRelativeLayout16"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1.7"
+                                android:gravity="right">
+                                <TextView
+                                    android:id="@+id/CardViewHourText8"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="$60/hr"
+                                    android:textSize="12dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:textStyle="bold"
+                                    android:textColor="#EE8205"/>
+                                <TextView
+                                    android:id="@+id/CardViewDateText8"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/CardViewHourText8"
+                                    android:text="7th March"
+                                    android:textSize="12dp"/>
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+    </ScrollView>
+
+    <!--    Navbar-->
+    <LinearLayout
+        android:id="@+id/Navbar"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:padding="20dp"
+        android:background="@color/white"
+        android:weightSum="5"
+        android:elevation="20dp">
+        <LinearLayout
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/HomeBtn"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/home_grey"
+                android:layout_gravity="center" />
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Home"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/SearchBtn"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/search"
+                android:layout_gravity="center" />
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Search"/>
+        </LinearLayout>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/AddBtn"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:background="@drawable/plus"
+            android:layout_gravity="center"
+            android:layout_weight="1"/>
+        <LinearLayout
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/ChatBtn"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/chat"
+                android:layout_gravity="center" />
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Chat"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/UserBtn"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/user_orange"
+                android:layout_gravity="center" />
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="User"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
