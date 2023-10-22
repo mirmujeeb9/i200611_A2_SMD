@@ -11,6 +11,8 @@ import android.widget.TextView;
 
 public class MainActivity11 extends AppCompatActivity {
 
+    //part 8 function below
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
