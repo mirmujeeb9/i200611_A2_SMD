@@ -13,6 +13,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 public class MainActivity13 extends AppCompatActivity {
+    //part 9 function below
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
