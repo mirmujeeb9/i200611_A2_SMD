@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainActivity15 extends AppCompatActivity {
+    //part 19 function below
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
