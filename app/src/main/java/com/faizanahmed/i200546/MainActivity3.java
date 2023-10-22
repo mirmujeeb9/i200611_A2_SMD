@@ -30,6 +30,8 @@ public class MainActivity3 extends AppCompatActivity {
     Spinner spnrCountry, spnrCity;
     //asdsadsa d;
     Button btnSignUp;
+
+    //point to be checked
     TextView tvbtnLogIn;
     FirebaseAuth mAuth;
 
